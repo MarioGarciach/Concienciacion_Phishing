@@ -224,23 +224,54 @@ function startMode(mode) {
     updateStatsDisplay();
 }
 
+// FUNCIÓN CORREGIDA - Ahora mantiene la referencia de la respuesta correcta
 function getQuestionsByCategory(category, limit) {
     let pool = category === 'all' 
         ? datos.preguntas 
         : datos.preguntas.filter(q => q.categoria === category);
     
-    return shuffleArray(pool).slice(0, limit).map(q => ({
-        ...q,
-        options: shuffleArray([...q.opciones]) // Mezclar opciones
-    }));
+    // Primero seleccionamos las preguntas al azar
+    let selected = shuffleArray(pool).slice(0, limit);
+    
+    // Luego para cada pregunta, mezclamos las opciones pero guardamos cuál es la correcta
+    return selected.map(q => {
+        // Clonamos la pregunta para no modificar el original
+        let clonedQ = JSON.parse(JSON.stringify(q));
+        
+        // Guardamos el texto de la respuesta correcta original
+        let correctText = clonedQ.opciones[clonedQ.respuesta_correcta];
+        
+        // Mezclamos las opciones
+        let shuffledOptions = shuffleArray([...clonedQ.opciones]);
+        
+        // Buscamos el nuevo índice de la respuesta correcta
+        let newCorrectIndex = shuffledOptions.indexOf(correctText);
+        
+        return {
+            ...clonedQ,
+            options: shuffledOptions,
+            respuesta_correcta: newCorrectIndex // Actualizamos con el nuevo índice
+        };
+    });
 }
 
+// FUNCIÓN CORREGIDA - Igual para dificultad
 function getQuestionsByDifficulty(difficulty, limit) {
     let pool = datos.preguntas.filter(q => q.nivel_dificultad === difficulty);
-    return shuffleArray(pool).slice(0, limit).map(q => ({
-        ...q,
-        options: shuffleArray([...q.opciones])
-    }));
+    let selected = shuffleArray(pool).slice(0, limit);
+    
+    return selected.map(q => {
+        let clonedQ = JSON.parse(JSON.stringify(q));
+        let correctText = clonedQ.opciones[clonedQ.respuesta_correcta];
+        let shuffledOptions = shuffleArray([...clonedQ.opciones]);
+        let newCorrectIndex = shuffledOptions.indexOf(correctText);
+        
+        return {
+            ...clonedQ,
+            options: shuffledOptions,
+            respuesta_correcta: newCorrectIndex
+        };
+    });
 }
 
 function shuffleArray(array) {
@@ -276,7 +307,7 @@ function renderQuestions() {
             <div class="hint-container">
                 <button class="btn-hint" id="hint-btn-${index}">💡 Ver pista</button>
                 <div class="hint-content hidden" id="hint-content-${index}">
-                    ${q.tips ? q.tips.join('<br>• ') : 'Sin pista disponible'}
+                    ${q.tips ? '• ' + q.tips.join('<br>• ') : 'Sin pista disponible'}
                 </div>
             </div>
         `;
@@ -303,6 +334,12 @@ function renderQuestions() {
     });
     updateNavigation(0);
     updateQuestionCounter();
+    
+    // DEBUG: Mostrar en consola las respuestas correctas para verificar
+    console.log('📝 Preguntas cargadas con índices correctos:');
+    visibleQuestions.forEach((q, i) => {
+        console.log(`Pregunta ${i+1}: "${q.pregunta.substring(0, 30)}..." -> Correcta: "${q.options[q.respuesta_correcta]}" (índice ${q.respuesta_correcta})`);
+    });
 }
 
 function selectOption(qIndex, optIndex) {
@@ -492,6 +529,13 @@ function scrollToTop() {
 // Funciones para admin (consola)
 window.admin = {
     verDatos: () => console.log('📊 Datos:', datos),
+    verPreguntasActuales: () => {
+        console.log('📝 Preguntas visibles:');
+        visibleQuestions.forEach((q, i) => {
+            console.log(`${i+1}. "${q.pregunta.substring(0, 50)}..."`);
+            console.log(`   Correcta: "${q.options[q.respuesta_correcta]}" (índice ${q.respuesta_correcta})`);
+        });
+    },
     resetearProgreso: () => {
         if (confirm('¿Resetear progreso?')) {
             localStorage.removeItem('exam_settings');
