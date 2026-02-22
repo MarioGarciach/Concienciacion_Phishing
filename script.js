@@ -35,6 +35,12 @@ const scoreEl = document.getElementById('score');
 const correctCountEl = document.getElementById('correct-count');
 const incorrectCountEl = document.getElementById('incorrect-count');
 
+// Elementos del header para modo minimalista
+const statsBar = document.querySelector('.stats-bar');
+const categoriasGrid = document.querySelector('.categorias-grid');
+const progresoContainer = document.querySelector('.progreso-container');
+const rulesFooter = document.querySelector('.rules-footer');
+
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     loadSettings();
@@ -68,14 +74,21 @@ function setupEventListeners() {
     // Navegación
     prevBtn.addEventListener('click', () => navigateQuestion(-1));
     nextBtn.addEventListener('click', () => navigateQuestion(1));
+    
+    // Botón de salir con confirmación
     exitBtn.addEventListener('click', () => {
-        if (confirm('¿Seguro que quieres salir? Perderás el progreso actual.')) {
+        if (confirm('¿Seguro que quieres volver al menú? Se perderá todo el progreso del examen actual.')) {
             showStartScreen();
         }
     });
+    
     submitExamBtn.addEventListener('click', finishCurrentExam);
     reviewExamBtn.addEventListener('click', reviewExam);
-    backToMenuBtn.addEventListener('click', showStartScreen);
+    backToMenuBtn.addEventListener('click', () => {
+        if (confirm('¿Volver al menú principal?')) {
+            showStartScreen();
+        }
+    });
 
     // Settings
     settingsBtn.addEventListener('click', (e) => {
@@ -163,6 +176,12 @@ function showStartScreen() {
     scrollToTop();
     hideAllSections();
     startScreen.classList.add('active');
+    
+    // Mostrar elementos del menú principal
+    if (categoriasGrid) categoriasGrid.style.display = 'grid';
+    if (progresoContainer) progresoContainer.style.display = 'block';
+    if (rulesFooter) rulesFooter.style.display = 'block';
+    
     resetStats();
     currentModeEl.textContent = 'Inicio';
 }
@@ -194,22 +213,40 @@ function startMode(mode) {
     currentMode = mode;
     hideAllSections();
     examContainer.classList.add('active');
+    
+    // Ocultar elementos del menú principal para modo minimalista
+    if (categoriasGrid) categoriasGrid.style.display = 'none';
+    if (progresoContainer) progresoContainer.style.display = 'none';
+    if (rulesFooter) rulesFooter.style.display = 'none';
 
     // Configurar según el modo
     let preguntas = [];
+    let modoTexto = '';
+    
     switch(mode) {
         case 'general':
-            currentModeEl.textContent = 'General';
+            modoTexto = 'General';
             preguntas = getQuestionsByCategory('all', 45);
             break;
         case 'experto':
-            currentModeEl.textContent = 'Experto';
+            modoTexto = 'Experto';
             preguntas = getQuestionsByDifficulty('avanzado', 20);
             break;
         default:
-            currentModeEl.textContent = mode.charAt(0).toUpperCase() + mode.slice(1);
+            // Mapeo de modos a nombres más amigables
+            const nombresModos = {
+                'phishing': 'Phishing',
+                'vishing': 'Vishing',
+                'smishing': 'Smishing',
+                'redes': 'Redes Sociales',
+                'fisico': 'Seguridad Física',
+                'general': 'Conceptos Generales'
+            };
+            modoTexto = nombresModos[mode] || mode.charAt(0).toUpperCase() + mode.slice(1);
             preguntas = getQuestionsByCategory(mode, 15);
     }
+
+    currentModeEl.textContent = modoTexto;
 
     if (preguntas.length === 0) {
         alert('No hay preguntas suficientes para este modo aún');
@@ -224,38 +261,27 @@ function startMode(mode) {
     updateStatsDisplay();
 }
 
-// FUNCIÓN CORREGIDA - Ahora mantiene la referencia de la respuesta correcta
 function getQuestionsByCategory(category, limit) {
     let pool = category === 'all' 
         ? datos.preguntas 
         : datos.preguntas.filter(q => q.categoria === category);
     
-    // Primero seleccionamos las preguntas al azar
     let selected = shuffleArray(pool).slice(0, limit);
     
-    // Luego para cada pregunta, mezclamos las opciones pero guardamos cuál es la correcta
     return selected.map(q => {
-        // Clonamos la pregunta para no modificar el original
         let clonedQ = JSON.parse(JSON.stringify(q));
-        
-        // Guardamos el texto de la respuesta correcta original
         let correctText = clonedQ.opciones[clonedQ.respuesta_correcta];
-        
-        // Mezclamos las opciones
         let shuffledOptions = shuffleArray([...clonedQ.opciones]);
-        
-        // Buscamos el nuevo índice de la respuesta correcta
         let newCorrectIndex = shuffledOptions.indexOf(correctText);
         
         return {
             ...clonedQ,
             options: shuffledOptions,
-            respuesta_correcta: newCorrectIndex // Actualizamos con el nuevo índice
+            respuesta_correcta: newCorrectIndex
         };
     });
 }
 
-// FUNCIÓN CORREGIDA - Igual para dificultad
 function getQuestionsByDifficulty(difficulty, limit) {
     let pool = datos.preguntas.filter(q => q.nivel_dificultad === difficulty);
     let selected = shuffleArray(pool).slice(0, limit);
@@ -334,12 +360,6 @@ function renderQuestions() {
     });
     updateNavigation(0);
     updateQuestionCounter();
-    
-    // DEBUG: Mostrar en consola las respuestas correctas para verificar
-    console.log('📝 Preguntas cargadas con índices correctos:');
-    visibleQuestions.forEach((q, i) => {
-        console.log(`Pregunta ${i+1}: "${q.pregunta.substring(0, 30)}..." -> Correcta: "${q.options[q.respuesta_correcta]}" (índice ${q.respuesta_correcta})`);
-    });
 }
 
 function selectOption(qIndex, optIndex) {
@@ -411,13 +431,13 @@ function navigateQuestion(direction) {
 }
 
 function updateNavigation(index) {
-    prevBtn.style.display = index === 0 ? 'none' : 'block';
+    prevBtn.style.display = index === 0 ? 'none' : 'inline-block';
     
     if (index === visibleQuestions.length - 1) {
         nextBtn.style.display = 'none';
-        submitExamBtn.style.display = 'block';
+        submitExamBtn.style.display = 'inline-block';
     } else {
-        nextBtn.style.display = 'block';
+        nextBtn.style.display = 'inline-block';
         submitExamBtn.style.display = 'none';
     }
 }
@@ -504,7 +524,7 @@ function reviewExam() {
     });
 
     updateNavigation(0);
-    submitExamBtn.style.display = 'block';
+    submitExamBtn.style.display = 'inline-block';
     submitExamBtn.textContent = 'Volver a Resultados';
     submitExamBtn.onclick = () => {
         hideAllSections();
