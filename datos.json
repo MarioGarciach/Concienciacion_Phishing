@@ -1,0 +1,1088 @@
+{
+  "version": "2.5",
+  "lastUpdated": "2024-01-20",
+  "totalPreguntas": 45,
+  "categorias": [
+    {
+      "id": "phishing",
+      "nombre": "Phishing y Correos Fraudulentos",
+      "icono": "📧",
+      "descripcion": "Ataques a través de correo electrónico",
+      "color": "#dc3545",
+      "preguntas": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    },
+    {
+      "id": "vishing",
+      "nombre": "Vishing y Llamadas Fraudulentas",
+      "icono": "📞",
+      "descripcion": "Estafas telefónicas",
+      "color": "#fd7e14",
+      "preguntas": [11, 12, 13, 14, 15, 16, 17]
+    },
+    {
+      "id": "smishing",
+      "nombre": "Smishing y SMS",
+      "icono": "💬",
+      "descripcion": "Mensajes de texto engañosos",
+      "color": "#20c997",
+      "preguntas": [18, 19, 20, 21, 22, 23]
+    },
+    {
+      "id": "redes",
+      "nombre": "Redes Sociales",
+      "icono": "🌐",
+      "descripcion": "Ingeniería social en redes sociales",
+      "color": "#6610f2",
+      "preguntas": [24, 25, 26, 27, 28, 29, 30]
+    },
+    {
+      "id": "fisico",
+      "nombre": "Seguridad Física",
+      "icono": "👥",
+      "descripcion": "Accesos no autorizados y tailgating",
+      "color": "#6f42c1",
+      "preguntas": [31, 32, 33, 34, 35, 36]
+    },
+    {
+      "id": "general",
+      "nombre": "Conceptos Generales",
+      "icono": "📚",
+      "descripcion": "Principios básicos de seguridad",
+      "color": "#6c757d",
+      "preguntas": [37, 38, 39, 40, 41, 42, 43, 44, 45]
+    }
+  ],
+  "preguntas": [
+    {
+      "id": 1,
+      "categoria": "phishing",
+      "pregunta": "Recibes un correo de 'tu banco' diciendo que tu cuenta será suspendida y debes hacer clic en un enlace para verificarla. ¿Qué haces?",
+      "opciones": [
+        "Hago clic inmediatamente para evitar la suspensión",
+        "Ignoro el correo sin más",
+        "Verifico la dirección del remitente y llamo al banco por el teléfono oficial",
+        "Reenvío el correo a mis compañeros para que ellos también lo vean"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Nunca hagas clic en enlaces de correos no solicitados. Los bancos nunca piden datos personales por email. Siempre contacta por canales oficiales.",
+      "tips": [
+        "Revisa la dirección de correo del remitente - suelen tener dominios extraños",
+        "Pasa el cursor sobre los enlaces sin hacer clic para ver la URL real",
+        "Los bancos nunca piden contraseñas por email",
+        "Las faltas de ortografía son señales de alerta"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 2,
+      "categoria": "phishing",
+      "pregunta": "Identifica cuál de estas señales NO es típica de un correo de phishing:",
+      "opciones": [
+        "Urgencia en el mensaje ('actúe inmediatamente')",
+        "Saludo genérico ('Estimado cliente' en lugar de tu nombre)",
+        "Firma digital del banco",
+        "Enlaces que no coinciden con el dominio oficial"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "La firma digital puede ser falsificada fácilmente. Las otras opciones son señales clásicas de phishing: urgencia, saludos genéricos y enlaces sospechosos.",
+      "tips": [
+        "Busca errores gramaticales y de ortografía",
+        "Comprueba si el logotipo es de baja calidad",
+        "Desconfía de amenazas de cierre de cuenta",
+        "Los bancos suelen tener dominios .bank o similares"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 3,
+      "categoria": "phishing",
+      "pregunta": "Un compañero te reenvía un correo 'urgente' del CEO pidiendo transferir dinero a una nueva cuenta. ¿Qué haces?",
+      "opciones": [
+        "Ejecuto la transferencia inmediatamente",
+        "Verifico con el CEO por teléfono o en persona",
+        "Reenvío el correo a todos para que estén alerta",
+        "Ignoro el correo porque no es mi responsabilidad"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "El 'fraude del CEO' es muy común. Siempre verifica por un canal diferente cualquier solicitud inusual de transferencia de dinero.",
+      "tips": [
+        "Establece un código de verificación para transferencias",
+        "Las solicitudes urgentes de dinero son siempre sospechosas",
+        "Verifica cambios en números de cuenta con el proveedor",
+        "Implementa doble verificación para transferencias"
+      ],
+      "nivel_dificultad": "avanzado",
+      "puntuacion": 20
+    },
+    {
+      "id": 4,
+      "categoria": "phishing",
+      "pregunta": "¿Qué es el 'spear phishing'?",
+      "opciones": [
+        "Phishing dirigido a muchas personas genéricas",
+        "Ataque personalizado usando información de la víctima",
+        "Phishing solo por SMS",
+        "Ataque que usa solo redes sociales"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Spear phishing es un ataque dirigido y personalizado. Los atacantes investigan a la víctima para hacer el engaño más creíble.",
+      "tips": [
+        "Limita la información personal que compartes en redes",
+        "Desconfía si usan tu nombre completo o datos personales",
+        "Verifica siempre peticiones inusuales aunque parezcan legítimas",
+        "Usa autenticación de dos factores"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 5,
+      "categoria": "phishing",
+      "pregunta": "¿Qué debes hacer si has hecho clic en un enlace de phishing?",
+      "opciones": [
+        "Nada, si no introduje datos",
+        "Cambiar contraseñas y reportar a IT inmediatamente",
+        "Esperar a ver qué pasa",
+        "Reiniciar el ordenador y olvidarlo"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Aunque no hayas introducido datos, el solo hecho de hacer clic puede activar malware. Reporta siempre a IT y cambia tus contraseñas.",
+      "tips": [
+        "Desconecta el equipo de la red inmediatamente",
+        "Ejecuta un análisis antivirus",
+        "Cambia contraseñas desde un dispositivo seguro",
+        "Monitoriza actividad sospechosa en tus cuentas"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 6,
+      "categoria": "phishing",
+      "pregunta": "Recibes un correo de 'Amazon' sobre un pedido que no hiciste, con una factura adjunta. ¿Qué haces?",
+      "opciones": [
+        "Abro el adjunto para ver qué pedido es",
+        "Elimino el correo sin abrir nada",
+        "Respondo para decir que no hice el pedido",
+        "Reenvío a Amazon para que investiguen"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Los adjuntos pueden contener malware. No los abras. Verifica directamente en tu cuenta de Amazon si hay algún pedido.",
+      "tips": [
+        "Nunca abras adjuntos inesperados",
+        "Verifica en la web oficial directamente",
+        "Los archivos .zip, .exe o .scr son especialmente peligrosos",
+        "Las facturas falsas son un vector común de malware"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 7,
+      "categoria": "phishing",
+      "pregunta": "¿Qué es el 'pharming'?",
+      "opciones": [
+        "Una granja de servidores",
+        "Redirigir tráfico de sitios legítimos a falsos aunque la URL sea correcta",
+        "Una técnica de cultivo",
+        "Phishing por teléfono"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Pharming infecta tu ordenador o router para redirigirte a webs falsas aunque escribas la URL correcta.",
+      "tips": [
+        "Mantén tu antivirus y sistema actualizados",
+        "Verifica que la conexión sea HTTPS",
+        "Cambia la contraseña por defecto de tu router",
+        "Usa DNS confiables como Cloudflare o Google"
+      ],
+      "nivel_dificultad": "avanzado",
+      "puntuacion": 20
+    },
+    {
+      "id": 8,
+      "categoria": "phishing",
+      "pregunta": "Un correo de 'Recursos Humanos' te pide actualizar tus datos en un formulario de Google. ¿Qué haces?",
+      "opciones": [
+        "Relleno el formulario inmediatamente",
+        "Verifico con RRHH por otro medio antes de hacer nada",
+        "Comparto el enlace con compañeros",
+        "Lo ignoro"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "RRHH nunca debe pedir datos sensibles por formularios no oficiales. Verifica siempre antes de proporcionar información personal.",
+      "tips": [
+        "Desconfía de formularios de Google para datos sensibles",
+        "Las empresas tienen sistemas internos para esto",
+        "Pregunta siempre antes de dar información personal",
+        "Verifica la dirección de correo del remitente"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 9,
+      "categoria": "phishing",
+      "pregunta": "¿Qué indicador en la URL te hace sospechar que es un sitio de phishing?",
+      "opciones": [
+        "Que empiece por https://",
+        "Que tenga el nombre de la empresa mal escrito (ej: paypa1.com)",
+        "Que tenga .com al final",
+        "Que tenga www"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Los phishers usan dominios muy similares a los reales pero con pequeñas variaciones (letras cambiadas, números, etc.).",
+      "tips": [
+        "Pasa el cursor sobre enlaces para ver la URL real",
+        "Comprueba si hay errores ortográficos en el dominio",
+        "Los dominios legítimos suelen ser fáciles de recordar",
+        "Desconfía de URLs con números en lugar de letras"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 10,
+      "categoria": "phishing",
+      "pregunta": "Recibes un correo con una oferta increíble: 'Gana un iPhone por solo 1€'. ¿Qué haces?",
+      "opciones": [
+        "Aprovecho la oferta antes de que se acabe",
+        "Lo borro, si es demasiado bueno para ser cierto, probablemente es falso",
+        "Lo comparto con amigos",
+        "Hago clic para ver los términos"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Las ofertas demasiado buenas son señuelos clásicos para recolectar datos o infectar dispositivos.",
+      "tips": [
+        "La regla de oro: si parece demasiado bueno, es falso",
+        "No existen las ofertas milagrosas",
+        "Verifica en la web oficial de la marca",
+        "Los sorteos legítimos tienen bases legales claras"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 11,
+      "categoria": "vishing",
+      "pregunta": "Recibes una llamada de 'soporte técnico de Microsoft' diciendo que tu ordenador tiene un virus. Te piden acceso remoto. ¿Qué haces?",
+      "opciones": [
+        "Doy acceso para que lo solucionen",
+        "Cuelgo, Microsoft no hace llamadas no solicitadas",
+        "Sigo sus instrucciones por teléfono",
+        "Les pido que me envíen un email"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Microsoft y otras empresas tecnológicas nunca hacen llamadas no solicitadas para ofrecer soporte. Es una estafa clásica.",
+      "tips": [
+        "Cuelga inmediatamente",
+        "Bloquea el número",
+        "Si tienes dudas, contacta con soporte oficial",
+        "Nunca des acceso remoto a desconocidos"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 12,
+      "categoria": "vishing",
+      "pregunta": "¿Qué información NUNCA debes dar por teléfono?",
+      "opciones": [
+        "Tu nombre de pila",
+        "Contraseñas y PINs",
+        "Tu horario laboral",
+        "El nombre de tu empresa"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Las contraseñas y PINs son información extremadamente sensible. Ninguna empresa legítima te los pedirá por teléfono.",
+      "tips": [
+        "Las contraseñas son personales e intransferibles",
+        "Usa frases de paso en lugar de preguntas de seguridad",
+        "Cambia tus contraseñas regularmente",
+        "No uses la misma contraseña para todo"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 13,
+      "categoria": "vishing",
+      "pregunta": "Te llaman diciendo que son de tu banco y hay un cargo fraudulento. Te piden verificar tu tarjeta. ¿Qué haces?",
+      "opciones": [
+        "Doy los datos para cancelar el cargo",
+        "Cuelgo y llamo al número oficial del banco",
+        "Solo doy los 4 últimos dígitos",
+        "Les transfiero con un supervisor"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Siempre verifica llamando al número oficial que aparece en tu tarjeta o en la web del banco. No confíes en quien te llama.",
+      "tips": [
+        "Los bancos tienen tus datos, no necesitan pedírtelos",
+        "Nunca des códigos de verificación SMS",
+        "Usa apps oficiales del banco",
+        "Activa notificaciones de movimientos"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 14,
+      "categoria": "vishing",
+      "pregunta": "¿Qué es la 'ingeniería social inversa' en llamadas?",
+      "opciones": [
+        "Cuando tú llamas al estafador",
+        "Cuando el estafador te hace creer que TÚ necesitas llamar a un número falso",
+        "Cuando grabas la conversación",
+        "Cuando usan un contestador automático"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Te dejan un mensaje para que llames a un número de tarificación especial o falso. Cuelgan rápido para que tú llames.",
+      "tips": [
+        "Desconfía de mensajes que te piden llamar urgentemente",
+        "Verifica números en fuentes oficiales",
+        "No devuelvas llamadas a números desconocidos",
+        "Usa apps que identifican números spam"
+      ],
+      "nivel_dificultad": "avanzado",
+      "puntuacion": 20
+    },
+    {
+      "id": 15,
+      "categoria": "vishing",
+      "pregunta": "Un 'familiar' te llama llorando diciendo que está en problemas y necesita dinero urgente. ¿Qué haces?",
+      "opciones": [
+        "Le transfiero dinero inmediatamente",
+        "Le pido datos para verificar y cuelgo para llamar a su número real",
+        "Le pregunto cuánto necesita",
+        "Le envío por Bizum"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Es la estafa del 'falso familiar'. Usan llamadas con ruido de fondo y manipulación emocional. Verifica siempre.",
+      "tips": [
+        "Ten una palabra clave familiar para emergencias",
+        "Llama al número real de tu familiar",
+        "Pregunta algo que solo él sabría",
+        "No te dejes llevar por la urgencia emocional"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 16,
+      "categoria": "vishing",
+      "pregunta": "¿Qué debes hacer si recibes una llamada de 'tu compañía eléctrica' diciendo que te cortarán la luz si no pagas ahora por teléfono?",
+      "opciones": [
+        "Pago para evitar el corte",
+        "Cuelgo y consulto mi recibo en la web oficial",
+        "Doy mis datos bancarios",
+        "Discuto con el operador"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Las compañías legítimas envían facturas y avisos por escrito. Nunca cortan un servicio sin previo aviso documentado.",
+      "tips": [
+        "Todas las compañías tienen canales oficiales de pago",
+        "Los cortes de servicio requieren notificación formal",
+        "Desconfía de amenazas de corte inmediato",
+        "Consulta siempre en la web o app oficial"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 17,
+      "categoria": "vishing",
+      "pregunta": "Un 'encuestador' te llama para un estudio y te pide confirmar tus datos personales. ¿Qué haces?",
+      "opciones": [
+        "Confirmo mis datos para ayudar",
+        "No doy información personal, las encuestas no necesitan confirmar datos",
+        "Doy datos falsos",
+        "Respondo educadamente"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Las encuestas legítimas no necesitan confirmar tus datos personales. Es una técnica para obtener información verificada.",
+      "tips": [
+        "Las encuestas reales suelen ser anónimas",
+        "No confirmes tu nombre, dirección o DNI",
+        "Pide el número de registro de la encuesta",
+        "Desconfía si te piden datos 'para confirmar'"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 18,
+      "categoria": "smishing",
+      "pregunta": "Recibes un SMS de 'Correos' diciendo que tu paquete no pudo entregarse y necesitas pagar 1,99€ en un enlace. ¿Qué haces?",
+      "opciones": [
+        "Pago para recibir mi paquete",
+        "Hago clic para ver el estado",
+        "Borro el SMS, es una estafa conocida",
+        "Respondo para pedir más información"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Es una estafa muy común. Las empresas de mensajería no piden pagos por SMS con enlaces acortados.",
+      "tips": [
+        "Revisa la URL sin hacer clic (suele ser extraña)",
+        "Las empresas legítimas tienen apps oficiales",
+        "Desconfía de SMS con enlaces acortados",
+        "Contacta directamente con la empresa por web oficial"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 19,
+      "categoria": "smishing",
+      "pregunta": "¿Qué es el 'SIM swapping'?",
+      "opciones": [
+        "Cambiar de operador móvil",
+        "Estafa donde duplican tu SIM para recibir tus SMS",
+        "Comprar un móvil nuevo",
+        "Transferir contactos entre móviles"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Los estafadores convencen a tu operadora para que active una nueva SIM, obteniendo así tus SMS de verificación bancaria.",
+      "tips": [
+        "Usa apps de autenticación en lugar de SMS",
+        "Pon un PIN en tu cuenta de operadora",
+        "Si te quedas sin cobertura sin motivo, contacta a tu operadora",
+        "No publiques información personal en redes"
+      ],
+      "nivel_dificultad": "avanzado",
+      "puntuacion": 20
+    },
+    {
+      "id": 20,
+      "categoria": "smishing",
+      "pregunta": "Identifica la señal de alerta en este SMS: 'Banco X: Su tarjeta ha sido bloqueada. Active en: bit.ly/xyz123'",
+      "opciones": [
+        "El nombre del banco",
+        "El enlace acortado de bit.ly",
+        "La palabra 'bloqueada'",
+        "Que sea un SMS"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Los bancos no usan enlaces acortados en comunicaciones oficiales. Siempre usan sus propios dominios.",
+      "tips": [
+        "Desconfía de cualquier enlace acortado en SMS",
+        "Las URLs legítimas suelen ser largas y con el dominio claro",
+        "Puedes ver la URL destino con herramientas online",
+        "Los bancos tienen apps, úsalas en lugar de SMS"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 21,
+      "categoria": "smishing",
+      "pregunta": "Recibes un SMS con un código de verificación que no solicitaste. Minutos después, alguien te llama diciendo ser del banco y te pide ese código. ¿Qué haces?",
+      "opciones": [
+        "Doy el código para ayudar",
+        "Cuelgo, es una estafa: el código es para ellos",
+        "Doy solo los últimos dígitos",
+        "Les pido que me envíen un email"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Están intentando hacer una operación y necesitan el código SMS. Nunca des códigos de verificación a nadie.",
+      "tips": [
+        "Los códigos SMS son personales e intransferibles",
+        "Si recibes un código sin solicitarlo, alguien intenta acceder",
+        "El banco nunca te pedirá códigos por teléfono",
+        "Cambia tus contraseñas si recibes códigos no solicitados"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 22,
+      "categoria": "smishing",
+      "pregunta": "¿Qué es el 'smishing'?",
+      "opciones": [
+        "Phishing por SMS",
+        "Phishing por email",
+        "Phishing por teléfono",
+        "Phishing por redes sociales"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Smishing = SMS + phishing. Es el uso de mensajes de texto para engañar a las víctimas.",
+      "tips": [
+        "Los SMS son menos seguros que las apps",
+        "No hagas clic en enlaces de SMS desconocidos",
+        "Verifica siempre con la empresa por otros medios",
+        "Bloquea números de spam"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 23,
+      "categoria": "smishing",
+      "pregunta": "Recibes un SMS de 'tu banco' con un enlace para descargar su nueva app. ¿Qué haces?",
+      "opciones": [
+        "Descargo la app desde el enlace",
+        "Busco la app en la tienda oficial (App Store/Google Play)",
+        "Reenvío el SMS a mis contactos",
+        "Hago clic para ver cómo es"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Siempre descarga apps desde las tiendas oficiales. Los enlaces en SMS pueden llevar a apps maliciosas que roban tus datos.",
+      "tips": [
+        "Las tiendas oficiales verifican las apps",
+        "Los bancos tienen sus apps en tiendas oficiales",
+        "Desconfía de enlaces para 'descargar apps'",
+        "Verifica el desarrollador de la app"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 24,
+      "categoria": "redes",
+      "pregunta": "¿Qué información NO deberías publicar en LinkedIn si trabajas en una empresa sensible?",
+      "opciones": [
+        "Tu experiencia laboral",
+        "Tu horario de trabajo y ubicación de oficina",
+        "Tus habilidades profesionales",
+        "Tu formación académica"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Publicar horarios y ubicación facilita ataques físicos o seguimiento. Los atacantes pueden saber cuándo no estás.",
+      "tips": [
+        "No publiques tu horario laboral exacto",
+        "Evita fotos que muestren tu oficina o credenciales",
+        "Revisa la configuración de privacidad",
+        "Piensa antes de aceptar conexiones desconocidas"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 25,
+      "categoria": "redes",
+      "pregunta": "Un conocido en redes sociales (que nunca has visto en persona) te pide amistad y luego información de tu empresa. ¿Qué haces?",
+      "opciones": [
+        "Acepto y comparto información para ser amable",
+        "Acepto pero no comparto información sensible",
+        "No acepto y bloqueo si insiste",
+        "Le doy información genérica"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Es una táctica común de ingeniería social. Construyen una relación falsa para obtener información sensible.",
+      "tips": [
+        "Solo acepta solicitudes de personas que conoces",
+        "Desconfía de perfiles con poca actividad pero muchas fotos",
+        "No compartas información laboral con desconocidos",
+        "Reporta perfiles sospechosos"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 26,
+      "categoria": "redes",
+      "pregunta": "¿Qué es el 'doxing'?",
+      "opciones": [
+        "Compartir memes divertidos",
+        "Publicar información personal de alguien sin su consentimiento",
+        "Una técnica de marketing",
+        "Un tipo de cifrado"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Doxing es investigar y publicar información privada de personas sin permiso, usada a menudo para acoso o chantaje.",
+      "tips": [
+        "Revisa qué información pública hay sobre ti",
+        "Usa diferentes nicks/usernames",
+        "No publiques tu dirección o teléfono",
+        "Configura privacidad en todas las redes"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 27,
+      "categoria": "redes",
+      "pregunta": "Un perfil muy atractivo te empieza a hablar y rápidamente te pide fotos íntimas o dinero. ¿Qué es?",
+      "opciones": [
+        "Amor verdadero",
+        "Estafa romántica (catfishing)",
+        "Una oportunidad única",
+        "Alguien tímido"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Las estafas románticas son muy comunes. Construyen una relación falsa para luego pedir dinero o fotos comprometidas.",
+      "tips": [
+        "Desconfía de perfiles muy atractivos que contactan de repente",
+        "Nunca envíes dinero a alguien que no conoces en persona",
+        "Las fotos pueden ser falsas (búscalas en Google Images)",
+        "Si piden fotos íntimas, pueden chantajearte después"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 28,
+      "categoria": "redes",
+      "pregunta": "Un quiz en Facebook te pide tu nombre de soltera de tu madre para 'saber el nombre de tu banda favorita'. ¿Qué haces?",
+      "opciones": [
+        "Lo hago, es divertido",
+        "No lo hago, son preguntas de seguridad comunes",
+        "Pongo datos falsos",
+        "Lo comparto con amigos"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Muchos quizzes recopilan respuestas a preguntas de seguridad. Es una forma de obtener información para acceder a tus cuentas.",
+      "tips": [
+        "Las preguntas de seguridad típicas son: nombre de mascota, soltera de madre, primera escuela",
+        "Nunca respondas estos quizzes con datos reales",
+        "Si respondes, usa respuestas falsas consistentes",
+        "Desconfía de cualquier quiz que pida datos personales"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 29,
+      "categoria": "redes",
+      "pregunta": "Publicas una foto de tus vacaciones mientras estás fuera. ¿Es seguro?",
+      "opciones": [
+        "Sí, total, son vacaciones",
+        "No, estás diciendo que tu casa está vacía",
+        "Da igual si la publicación es privada",
+        "Solo si no etiquetas la ubicación"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Publicar que estás de vacaciones avisa a posibles ladrones de que tu casa está vacía. Es mejor publicar cuando vuelvas.",
+      "tips": [
+        "Espera a volver para publicar fotos de vacaciones",
+        "No digas cuándo estarás fuera",
+        "Revisa quién puede ver tus publicaciones",
+        "Si publicas en directo, asegura bien tu casa"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 30,
+      "categoria": "redes",
+      "pregunta": "¿Qué es el 'oversharing'?",
+      "opciones": [
+        "Compartir demasiada información personal online",
+        "Compartir archivos muy grandes",
+        "Una red social nueva",
+        "Un tipo de virus"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Oversharing es compartir información personal en exceso, lo que facilita a los atacantes obtener datos para ingeniería social.",
+      "tips": [
+        "Piensa antes de publicar",
+        "Lo que publicas puede ser usado en tu contra",
+        "Revisa tu privacidad periódicamente",
+        "No todo necesita ser compartido"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 31,
+      "categoria": "fisico",
+      "pregunta": "Alguien sin identificación te pide que le abras la puerta porque 'ha olvidado la tarjeta'. ¿Qué haces?",
+      "opciones": [
+        "Abro para ser amable",
+        "Le pido que espere y llamo a seguridad",
+        "Le dejo pasar pero le vigilo",
+        "Le digo que entre rápido"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "El 'tailgating' es una técnica común. Nunca permitas el acceso a personas no autorizadas, por muy convincentes que sean.",
+      "tips": [
+        "La seguridad es responsabilidad de todos",
+        "No temas ofender, es mejor prevenir",
+        "Reporta siempre a seguridad",
+        "Si pueden esperar, que esperen"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 32,
+      "categoria": "fisico",
+      "pregunta": "Ves a alguien con una tablet revisando cables en la sala de servidores. No lleva identificación visible. ¿Qué haces?",
+      "opciones": [
+        "Asumo que es de mantenimiento",
+        "Le pregunto a quién busca y llamo a seguridad si no convence",
+        "Le ofrezco ayuda",
+        "Sigo con mi trabajo"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Los atacantes pueden disfrazarse de técnicos. Siempre verifica la identidad, especialmente en áreas sensibles.",
+      "tips": [
+        "Todo el personal debe llevar identificación visible",
+        "Los técnicos reales tienen órdenes de trabajo",
+        "No temas preguntar",
+        "Reporta actividad sospechosa"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 33,
+      "categoria": "fisico",
+      "pregunta": "¿Qué es el 'shoulder surfing'?",
+      "opciones": [
+        "Navegar por internet",
+        "Mirar por encima del hombro para ver contraseñas o datos",
+        "Una técnica de surf",
+        "Trabajar desde casa"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Es cuando alguien mira tu pantalla o teclado mientras introduces datos sensibles, en oficinas, transporte público, etc.",
+      "tips": [
+        "Usa filtros de privacidad en pantallas",
+        "Ten cuidado al teclear contraseñas en público",
+        "Cierra sesión al ausentarte",
+        "Coloca la pantalla de forma que no sea visible"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 34,
+      "categoria": "fisico",
+      "pregunta": "Un 'repartidor' llega con un paquete para alguien que no está y pide que lo recibas tú. ¿Qué haces?",
+      "opciones": [
+        "Lo recibo para ayudar",
+        "No lo recibo si no es para mí, podría ser una excusa para entrar",
+        "Le digo que lo deje en recepción",
+        "Firmo por él"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Es una táctica para acceder a zonas restringidas. Los repartidores legítimos tienen procedimientos para entregas.",
+      "tips": [
+        "Los paquetes deben ir a recepción o a la persona designada",
+        "Desconfía de repartidores insistentes",
+        "Verifica que el repartidor tiene uniforme y vehículo identificado",
+        "Si hay dudas, llama a seguridad"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 35,
+      "categoria": "fisico",
+      "pregunta": "Tu tarjeta de acceso no funciona y un compañero te ofrece entrar con la suya. ¿Qué haces?",
+      "opciones": [
+        "Acepto, es un compañero",
+        "No acepto, voy a recepción para que me solucionen el problema",
+        "Le pido que entre por mí",
+        "Espero a que alguien más abra"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Compartir tarjetas de acceso viola las políticas de seguridad y hace que los registros de acceso no sean fiables.",
+      "tips": [
+        "Cada persona debe usar su propia tarjeta",
+        "Si tu tarjeta no funciona, reporta la incidencia",
+        "Los accesos quedan registrados por tarjeta",
+        "Compartir tarjetas puede ser motivo de sanción"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 36,
+      "categoria": "fisico",
+      "pregunta": "Ves a alguien revisando papeles en una impresora que no es la suya. ¿Qué haces?",
+      "opciones": [
+        "Sigo mi camino",
+        "Me acerco y pregunto si necesita ayuda",
+        "Recojo los papeles yo mismo",
+        "Le ignoro"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Podría estar buscando información sensible dejada en impresoras. Siempre verifica y reporta comportamientos extraños.",
+      "tips": [
+        "Recoge siempre tus impresiones inmediatamente",
+        "No dejes documentos sensibles en impresoras",
+        "Si ves a alguien mirando documentos ajenos, reporta",
+        "Usa siempre la función de impresión segura si está disponible"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 37,
+      "categoria": "general",
+      "pregunta": "¿Qué es la ingeniería social?",
+      "opciones": [
+        "Una técnica de programación",
+        "Manipulación psicológica para obtener información",
+        "Un tipo de firewall",
+        "Redes sociales profesionales"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "La ingeniería social explota la confianza y psicología humana, no sistemas técnicos, para obtener información sensible.",
+      "tips": [
+        "Desconfía de solicitudes inesperadas de información",
+        "Verifica siempre la identidad del solicitante",
+        "No compartas información sin confirmar",
+        "La curiosidad y la urgencia son armas del atacante"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 38,
+      "categoria": "general",
+      "pregunta": "¿Cuál es la mejor defensa contra la ingeniería social?",
+      "opciones": [
+        "El mejor antivirus",
+        "La concienciación y formación continua",
+        "Contraseñas complejas",
+        "Firewalls actualizados"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "La tecnología ayuda, pero el factor humano es clave. La formación constante es la mejor defensa contra la manipulación.",
+      "tips": [
+        "Formación regular a todos los empleados",
+        "Simulacros de phishing",
+        "Cultura de seguridad en la empresa",
+        "Canales claros para reportar incidentes"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 39,
+      "categoria": "general",
+      "pregunta": "¿Qué es el 'pretexting'?",
+      "opciones": [
+        "Crear un pretexto o escenario falso para obtener información",
+        "Un tipo de virus",
+        "Enviar mensajes de texto",
+        "Llamar por teléfono"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Pretexting es inventar una situación convincente (un pretexto) para que la víctima proporcione información voluntariamente.",
+      "tips": [
+        "Verifica siempre la identidad de quien pide información",
+        "Desconfía de historias muy elaboradas",
+        "Los estafadores usan detalles para parecer legítimos",
+        "Si es muy complicado, probablemente es falso"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 40,
+      "categoria": "general",
+      "pregunta": "¿Qué es el 'baiting'?",
+      "opciones": [
+        "Ofrecer algo atractivo (un señuelo) para que la víctima pique",
+        "Pescar datos",
+        "Una técnica de pesca",
+        "Llamar por teléfono"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Baiting usa un señuelo (un USB abandonado, una oferta irresistible) para que la víctima ejecute malware o entregue datos.",
+      "tips": [
+        "No conectes USBs encontrados a tu ordenador",
+        "Desconfía de ofertas demasiado buenas",
+        "Los atacantes dejan USBs infectados en lugares públicos",
+        "Siempre entrega USBs encontrados a IT"
+      ],
+      "nivel_dificultad": "intermedio",
+      "puntuacion": 15
+    },
+    {
+      "id": 41,
+      "categoria": "general",
+      "pregunta": "¿Qué es el 'quid pro quo' en ingeniería social?",
+      "opciones": [
+        "Ofrecer algo a cambio de información",
+        "Un tipo de café",
+        "Una ley",
+        "Un saludo"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Quid pro quo (algo por algo) es ofrecer un beneficio a cambio de información o acceso (ej: 'te ayudo con tu ordenador si me das tu contraseña').",
+      "tips": [
+        "Desconfía de ofertas de ayuda no solicitadas",
+        "Nadie necesita tu contraseña para ayudarte",
+        "Los técnicos legítimos tienen procedimientos",
+        "No aceptes ayuda de desconocidos para temas técnicos"
+      ],
+      "nivel_dificultad": "avanzado",
+      "puntuacion": 20
+    },
+    {
+      "id": 42,
+      "categoria": "general",
+      "pregunta": "¿Qué debes hacer si sospechas que has sido víctima de ingeniería social?",
+      "opciones": [
+        "Ocultarlo por vergüenza",
+        "Reportarlo inmediatamente a IT/seguridad",
+        "Contárselo a un compañero pero no a IT",
+        "Esperar a ver si pasa algo"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Reportar rápido permite tomar medidas para minimizar daños. Nunca te sientas avergonzado, todos podemos ser engañados.",
+      "tips": [
+        "Reporta siempre, aunque no estés seguro",
+        "Cuanto antes se sepa, antes se puede actuar",
+        "Las empresas tienen protocolos para estos casos",
+        "No tener miedo a represalias por reportar"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 43,
+      "categoria": "general",
+      "pregunta": "¿Qué es la autenticación de dos factores (2FA)?",
+      "opciones": [
+        "Tener dos contraseñas",
+        "Un segundo método de verificación además de la contraseña",
+        "Dos usuarios diferentes",
+        "Un antivirus doble"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "2FA añade una capa extra de seguridad: algo que sabes (contraseña) + algo que tienes (móvil) o algo que eres (huella).",
+      "tips": [
+        "Activa 2FA en todas tus cuentas importantes",
+        "Usa apps de autenticación (Google Authenticator) mejor que SMS",
+        "El 2FA previene accesos aunque roben tu contraseña",
+        "Es una de las mejores medidas de seguridad"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 44,
+      "categoria": "general",
+      "pregunta": "¿Qué información personal deberías proteger más?",
+      "opciones": [
+        "Tu nombre",
+        "Tu fecha de nacimiento y DNI",
+        "Tu color favorito",
+        "Tu comida preferida"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Fecha de nacimiento y DNI son datos clave para suplantación de identidad. Protégelos como si fueran contraseñas.",
+      "tips": [
+        "No compartas tu DNI sin necesidad real",
+        "La fecha de nacimiento se usa en muchas verificaciones",
+        "Pregunta siempre por qué necesitan tus datos",
+        "Tienes derecho a no dar información no necesaria"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    },
+    {
+      "id": 45,
+      "categoria": "general",
+      "pregunta": "¿Cuál es la mejor contraseña?",
+      "opciones": [
+        "123456",
+        "Tu nombre y fecha de nacimiento",
+        "Una frase larga con mayúsculas, números y símbolos",
+        "password"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Las contraseñas largas y complejas son más seguras. Usa frases fáciles de recordar pero difíciles de adivinar.",
+      "tips": [
+        "Usa frases como 'MiPerroSeLlama@2024'",
+        "No reutilices contraseñas en servicios importantes",
+        "Usa un gestor de contraseñas",
+        "Cambia contraseñas si sospechas que pueden haber sido comprometidas"
+      ],
+      "nivel_dificultad": "básico",
+      "puntuacion": 10
+    }
+  ],
+  "tipsGenerales": [
+    {
+      "categoria": "phishing",
+      "titulo": "Protección contra Phishing",
+      "consejos": [
+        "Verifica siempre el remitente del correo",
+        "No hagas clic en enlaces sospechosos",
+        "Comprueba la URL antes de hacer clic (pasa el ratón por encima)",
+        "Desconfía de mensajes urgentes o amenazantes",
+        "Los bancos y organismos oficiales nunca piden datos por email",
+        "Los adjuntos inesperados pueden contener malware",
+        "Si tienes dudas, contacta directamente por canales oficiales",
+        "Las faltas de ortografía son señales de alerta"
+      ]
+    },
+    {
+      "categoria": "vishing",
+      "titulo": "Protección contra Vishing",
+      "consejos": [
+        "Si recibes una llamada sospechosa, cuelga",
+        "Llama tú al número oficial de la empresa",
+        "Nunca des datos personales por teléfono",
+        "Las empresas legítimas no te presionan",
+        "Apúntate en la lista Robinson para reducir llamadas spam",
+        "Desconfía de números desconocidos que insisten",
+        "Las emergencias familiares suelen ser falsas",
+        "Si es importante, te contactarán por otros medios"
+      ]
+    },
+    {
+      "categoria": "smishing",
+      "titulo": "Protección contra Smishing",
+      "consejos": [
+        "No hagas clic en enlaces de SMS desconocidos",
+        "Los bancos no envían enlaces por SMS",
+        "Desconfía de premios o herencias inesperadas",
+        "Verifica siempre con la empresa por canales oficiales",
+        "Bloquea y reporta números sospechosos",
+        "Los códigos SMS son personales, nunca los compartas",
+        "Las apps oficiales son más seguras que los SMS",
+        "No respondas a SMS de números desconocidos"
+      ]
+    },
+    {
+      "categoria": "redes",
+      "titulo": "Seguridad en Redes Sociales",
+      "consejos": [
+        "Revisa la configuración de privacidad regularmente",
+        "No aceptes solicitudes de desconocidos",
+        "No publiques información sensible (horarios, ubicación exacta)",
+        "Cuidado con los quizzes que piden datos personales",
+        "Piensa antes de publicar fotos de tu lugar de trabajo",
+        "Lo que publicas puede ser usado en tu contra",
+        "Desconfía de perfiles demasiado perfectos",
+        "No publiques que estás de vacaciones hasta volver"
+      ]
+    },
+    {
+      "categoria": "fisico",
+      "titulo": "Seguridad Física",
+      "consejos": [
+        "No permitas el acceso a personas sin identificación",
+        "Reporta a seguridad si ves algo extraño",
+        "Usa siempre tu tarjeta de acceso",
+        "No compartas códigos o tarjetas con nadie",
+        "Asegura tu pantalla cuando te ausentes",
+        "Desconfía de 'técnicos' sin identificación",
+        "Los repartidores tienen procedimientos, no los recibas si no es para ti",
+        "Recoge siempre tus impresiones"
+      ]
+    },
+    {
+      "categoria": "general",
+      "titulo": "Reglas de Oro de Seguridad",
+      "consejos": [
+        "Si algo parece demasiado bueno para ser verdad, probablemente lo es",
+        "La urgencia es una táctica del atacante",
+        "Verifica siempre por un canal diferente",
+        "Reporta cualquier incidente sin miedo",
+        "La seguridad es responsabilidad de todos",
+        "Usa autenticación de dos factores siempre que puedas",
+        "Las contraseñas largas son más seguras",
+        "Mantén todo actualizado"
+      ]
+    }
+  ]
+}

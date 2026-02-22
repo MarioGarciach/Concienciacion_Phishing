@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de Concienciación en Ingeniería Social</title>
+
+    <!-- Security Policies -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-background"></div>
+    <div class="container">
+        <header>
+            <div class="settings-container">
+                <button id="settings-btn" class="settings-btn" title="Configuración"
+                    aria-label="Abrir configuración de visualización">⚙️</button>
+                <div id="settings-dropdown" class="settings-dropdown">
+                    <h3>Visualización</h3>
+                    <div class="setting-item">
+                        <label class="switch">
+                            <input type="checkbox" id="dark-mode-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span>🌙 Oscuro</span>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="switch">
+                            <input type="checkbox" id="sepia-mode-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span>📖 Sepia</span>
+                    </div>
+
+                    <div id="sepia-controls" class="setting-control hidden">
+                        <label for="sepia-slider">Intensidad:</label>
+                        <input type="range" id="sepia-slider" min="0" max="100" value="20">
+                    </div>
+                </div>
+            </div>
+            <h1>🛡️ Ingeniería Social</h1>
+            <p class="subtitle">Examen de Concienciación en Seguridad</p>
+
+            <div class="stats-bar">
+                <div class="stat-box">
+                    <span class="stat-label">Modo</span>
+                    <span id="current-mode" class="stat-value">Inicio</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Pregunta</span>
+                    <span id="current-question" class="stat-value">0/0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Puntuación</span>
+                    <span id="score" class="stat-value">0.00</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Correctas</span>
+                    <span id="correct-count" class="stat-value success">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Incorrectas</span>
+                    <span id="incorrect-count" class="stat-value danger">0</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Pantalla de inicio -->
+            <div id="start-screen" class="exam-section active">
+                <div class="intro-header">
+                    <h2>Selecciona tu Desafío</h2>
+                    <p>Elige una categoría para empezar a practicar</p>
+                </div>
+
+                <div class="modes-grid">
+                    <!-- Examen General -->
+                    <div class="mode-card accent-blue">
+                        <div class="mode-icon">📋</div>
+                        <h3>Examen General</h3>
+                        <p>45 preguntas variadas de todas las categorías.</p>
+                        <button class="btn btn-primary mode-btn" data-mode="general">Comenzar Test</button>
+                    </div>
+
+                    <!-- Phishing -->
+                    <div class="mode-card accent-purple">
+                        <div class="mode-icon">📧</div>
+                        <h3>Phishing</h3>
+                        <p>Correos fraudulentos y estafas por email</p>
+                        <button class="btn btn-outline mode-btn" data-mode="phishing">Practicar</button>
+                    </div>
+
+                    <!-- Vishing -->
+                    <div class="mode-card accent-green">
+                        <div class="mode-icon">📞</div>
+                        <h3>Vishing</h3>
+                        <p>Llamadas telefónicas engañosas</p>
+                        <button class="btn btn-outline mode-btn" data-mode="vishing">Practicar</button>
+                    </div>
+
+                    <!-- Smishing -->
+                    <div class="mode-card accent-orange">
+                        <div class="mode-icon">💬</div>
+                        <h3>Smishing</h3>
+                        <p>SMS y mensajes de texto fraudulentos</p>
+                        <button class="btn btn-outline mode-btn" data-mode="smishing">Practicar</button>
+                    </div>
+
+                    <!-- Redes Sociales -->
+                    <div class="mode-card accent-teal">
+                        <div class="mode-icon">🌐</div>
+                        <h3>Redes Sociales</h3>
+                        <p>Ingeniería social en RRSS</p>
+                        <button class="btn btn-outline mode-btn" data-mode="redes">Practicar</button>
+                    </div>
+
+                    <!-- Seguridad Física -->
+                    <div class="mode-card accent-red">
+                        <div class="mode-icon">👥</div>
+                        <h3>Seguridad Física</h3>
+                        <p>Accesos no autorizados y tailgating</p>
+                        <button class="btn btn-outline mode-btn" data-mode="fisico">Practicar</button>
+                    </div>
+
+                    <!-- Conceptos Generales -->
+                    <div class="mode-card accent-blue">
+                        <div class="mode-icon">📚</div>
+                        <h3>Conceptos Generales</h3>
+                        <p>Principios básicos de seguridad</p>
+                        <button class="btn btn-outline mode-btn" data-mode="general">Practicar</button>
+                    </div>
+
+                    <!-- Modo Experto -->
+                    <div class="mode-card accent-gold">
+                        <div class="mode-icon">💎</div>
+                        <h3>Modo Experto</h3>
+                        <p>Preguntas avanzadas de todas las categorías</p>
+                        <button class="btn btn-primary mode-btn" data-mode="experto">Comenzar</button>
+                    </div>
+                </div>
+
+                <div class="rules-footer">
+                    <p>ℹ️ <strong>Reglas:</strong> Correctas +0.33 pts | 3 Incorrectas consecutivas -0.33 pts</p>
+                    <p class="small">📊 45 preguntas disponibles | Actualizado: Febrero 2026</p>
+                </div>
+            </div>
+
+            <!-- Examen -->
+            <div id="exam-container" class="exam-section">
+                <div id="questions-container" class="fade-in"></div>
+
+                <div class="navigation">
+                    <button id="exit-btn" class="btn btn-secondary">❌ Salir</button>
+                    <button id="prev-btn" class="btn btn-secondary">← Anterior</button>
+                    <button id="next-btn" class="btn btn-primary">Siguiente →</button>
+                    <button id="submit-exam-btn" class="btn btn-success" style="display: none;">Finalizar Examen</button>
+                </div>
+            </div>
+
+            <!-- Resultados del examen -->
+            <div id="results-screen" class="exam-section">
+                <div class="results-container">
+                    <h2>Resultados <span id="exam-mode-name"></span></h2>
+
+                    <div class="score-wrapper">
+                        <div id="score-circle" class="score-circle">0%</div>
+                    </div>
+
+                    <div class="score-display">Puntuación: <span id="final-score">0.00</span></div>
+                    <p id="result-message" class="result-message"></p>
+
+                    <div id="results-list" class="results-list"></div>
+
+                    <div class="action-buttons">
+                        <button id="review-exam-btn" class="btn btn-secondary">Revisar Respuestas</button>
+                        <button id="back-to-menu-btn" class="btn btn-primary">Volver al Menú</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Hecho por Mario con ❤️ para concienciación en seguridad</p>
+            <p class="small">Versión 2.5 | 45 preguntas</p>
+        </footer>
+    </div>
+    <button id="scroll-top-btn" class="scroll-top-btn" title="Ir arriba">↑</button>
+
+    <script src="script.js?v=2.5"></script>
+</body>
+
+</html>
